@@ -6,17 +6,14 @@
             <section>
 
                 {{ .Content }}
-
+                {{ if isset .Site.Params "email" }}
                 <div class="heading">
                   <h3>{{ i18n "contactForm" }}</h3>
                 </div>
 
                 <div id="contact-message"></div>
 
-                <form name="Revenue.Health Contact Form" class="contact-form" method="post" netlify netlify-honeypot="automation-honeypot-field">
-                    <p class="hidden">
-                        <label>Don’t fill this out if you're human: <input name="automation-honeypot-field"></label>
-                    </p>
+                <form class="contact-form" method="post" action="https://formspree.io/{{ .Site.Params.email }}">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -38,12 +35,16 @@
                         </div>
 
                         <div class="col-sm-12 text-center">
-                                <div data-netlify-recaptcha></div>
-                                <button type="submit" class="btn btn-template-main"><i class="fa fa-envelope-o"></i>{{ i18n "contactSend" }}</button>
+                            <button type="submit" class="btn btn-template-main"><i class="fa fa-envelope-o"></i>{{ i18n "contactSend" }}</button>
+                            <input type="text" name="_gotcha" style="display:none" />
+                            <input type="hidden" name="_subject" value="[Revenue.Health Sales] Primary website contact form submsission" />
+                            <input type="hidden" name="_cc" value="shahid.shah@netspective.com" />
+                            <!-- input type="hidden" name="_cc" value="weber.mk@gmail.com,manoj@i-medbill.com,shahid.shah@netspective.com" /> -->
                         </div>
                     </div>
                     <!-- /.row -->
                 </form>
+                {{ end }}
             </section>
 
         </div>
