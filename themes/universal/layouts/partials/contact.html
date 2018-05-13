@@ -13,9 +13,9 @@
 
                 <div id="contact-message"></div>
 
-                <form class="contact-form" method="post" netlify netlify-honeypot="bot-field">
+                <form name="Revenue.Health Contact Form" class="contact-form" method="post" netlify netlify-honeypot="automation-honeypot-field">
                     <p class="hidden">
-                        <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+                        <label>Don’t fill this out if you're human: <input name="automation-honeypot-field"></label>
                     </p>
                     <div class="row">
                         <div class="col-sm-6">
@@ -37,11 +37,9 @@
                             </div>
                         </div>
 
-                        <div data-netlify-recaptcha></div>
-
                         <div class="col-sm-12 text-center">
-                          <button type="submit" class="btn btn-template-main"><i class="fa fa-envelope-o"></i>{{ i18n "contactSend" }}</button>
-
+                                <div data-netlify-recaptcha></div>
+                                <button type="submit" class="btn btn-template-main"><i class="fa fa-envelope-o"></i>{{ i18n "contactSend" }}</button>
                         </div>
                     </div>
                     <!-- /.row -->
