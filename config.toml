@@ -1,4 +1,4 @@
-baseurl = "https://www.revenue.health"
+baseurl = "/"
 title = "Revenue Acceleration LLC"
 theme = "universal"
 languageCode = "en-us"
