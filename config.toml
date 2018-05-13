@@ -4,7 +4,7 @@ theme = "universal"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 # disqusShortname = "revenueHealth"
-# googleAnalytics = ""
+# googleAnalytics = "" #TODO need to add GA code
 
 # Define the number of posts per page
 paginate = 50
