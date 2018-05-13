@@ -51,35 +51,20 @@ paginate = 50
 [[menu.topbar]]
     weight = 3
     name = "Email"
-    url = "mailto:your@email.com"
+    url = "mailto:accelerate@revenue.health"
     pre = "<i class='fa fa-2x fa-envelope'></i>"
 
 [params]
     viewMorePostLink = "/blog/"
-    author = "DevCows"
-    defaultKeywords = ["devows", "hugo", "go"]
-    defaultDescription = "Site template made by devcows using hugo"
+    author = "Revenue Accelerators"
+    defaultKeywords = ["revenue"]
+    defaultDescription = "Our expert opinions"
 
     # Google Maps API key (if not set will default to not passing a key.)
     googleMapsApiKey = "AIzaSyCFhtWLJcE30xOAjcbSFi-0fnoVmQZPb1Y"
 
     # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
-    style = "default"
-
-    # Since this template is static, the contact form uses www.formspree.io as a
-    # proxy. The form makes a POST request to their servers to send the actual
-    # email. Visitors can send up to a 1000 emails each month for free.
-    #
-    # What you need to do for the setup?
-    #
-    # - set your email address under 'email' below
-    # - upload the generated site to your server
-    # - send a dummy email yourself to confirm your account
-    # - click the confirm link in the email from www.formspree.io
-    # - you're done. Happy mailing!
-    #
-    # Enable the contact form by entering your Formspree.io email
-    email = "your@email.com"
+    style = "violet"
 
     about_us = "<p>Revenue Health is a complete Healthcare Solutions company specializing in revenue cycle management.</p>"
     copyright = "Copyright (C) 2018 Revenue Acceleration LLC. All Rights Reserved."

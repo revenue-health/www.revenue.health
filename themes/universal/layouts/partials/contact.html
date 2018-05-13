@@ -7,15 +7,16 @@
 
                 {{ .Content }}
 
-                {{ if isset .Site.Params "email" }}
-
                 <div class="heading">
                   <h3>{{ i18n "contactForm" }}</h3>
                 </div>
 
                 <div id="contact-message"></div>
 
-                <form class="contact-form" method="post" action="https://formspree.io/{{ .Site.Params.email }}">
+                <form class="contact-form" method="post" netlify netlify-honeypot="bot-field">
+                    <p class="hidden">
+                        <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+                    </p>
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -36,6 +37,8 @@
                             </div>
                         </div>
 
+                        <div data-netlify-recaptcha></div>
+
                         <div class="col-sm-12 text-center">
                           <button type="submit" class="btn btn-template-main"><i class="fa fa-envelope-o"></i>{{ i18n "contactSend" }}</button>
 
@@ -43,9 +46,6 @@
                     </div>
                     <!-- /.row -->
                 </form>
-
-                {{ end }}
-
             </section>
 
         </div>
@@ -60,7 +60,6 @@
                 {{ .Site.Params.address | safeHTML }}
 
             </section>
-
             {{ end }}
 
         </div>
