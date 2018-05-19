@@ -6,7 +6,7 @@ categories = ["approach"]
 banner = "img/resources/handshake-blue-gray.jpg"
 +++
 
-The Revenue.Health RCM System uses a broad and comprehensive approach to medical billing. We have CPC certified and experienced medical coders well versed in international coding terminologies. They continuously grow and improve internal observance of contract ICD & CPT resources to meet the requirements of our customers. 
+The Revenue Acceleration RCM System uses a broad and comprehensive approach to medical billing. We have CPC certified and experienced medical coders well versed in international coding terminologies. They continuously grow and improve internal observance of contract ICD & CPT resources to meet the requirements of our customers. 
 
 Our structure is designed to ensure every step of the Revenue Cycle Management is completed. Our methodical process leaves no claim un-worked. Our exceptional approach to RCM identifies every claim as its own unit and treats it as such throughout the claim’s life cycle. While working on the claims we take into consideration the following:
 
