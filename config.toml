@@ -51,7 +51,7 @@ paginate = 50
 [[menu.topbar]]
     weight = 3
     name = "Email"
-    url = "mailto:amanda.weber@revenue.health"
+    url = "mailto:info@revenue.health"
     pre = "<i class='fa fa-2x fa-envelope'></i>"
 
 [params]
@@ -90,7 +90,7 @@ paginate = 50
 # Enable or disable top bar with social icons
 [params.topbar]
     enable = true
-    text = """<p class="hidden-sm hidden-xs">Contact us on (201) 564-1178 or <a href="mailto:amanda.weber@revenue.health?subject=Help%20accelerate%20my%20revenue">amanda.weber@revenue.health</a>.</p>
+    text = """<p class="hidden-sm hidden-xs">Contact us on (201) 564-1178 or <a href="mailto:info@revenue.health?subject=Help%20accelerate%20my%20revenue">amanda.weber@revenue.health</a>.</p>
       <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>
       <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
       </p>
