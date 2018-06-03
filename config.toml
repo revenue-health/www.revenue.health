@@ -1,6 +1,6 @@
 baseurl = "/"
 title = "Revenue Acceleration LLC"
-theme = "universal"
+#theme = "universal"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 # disqusShortname = "revenueHealth"
