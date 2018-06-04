@@ -83,8 +83,7 @@ paginate = 50
 
     logo = "img/logo.png"
     address = """<p><strong>Revenue Acceleration LLC</strong>
-        <br>123 Main Street
-        <br>Anytown, DC USA
+        <br>Fishers, IN USA
       </p>
       """
     latitude = "38.897663300"
