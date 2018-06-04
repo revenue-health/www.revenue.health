@@ -45,7 +45,7 @@ paginate = 50
 [[menu.topbar]]
     weight = 2
     name = "Twitter"
-    url = "https://twitter.com/revenue_health"
+    url = "https://twitter.com/RevenueAccel"
     pre = "<i class='fa fa-2x fa-twitter'></i>"
 
 [[menu.topbar]]
