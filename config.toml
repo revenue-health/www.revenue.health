@@ -41,26 +41,22 @@ paginate = 50
 
 # Top bar social links menu
 
-[[menu.topbar]]
-    weight = 1
-    name = "Facebook"
-    url = "http://facebook.com"
-    pre = "<i class='fa fa-2x fa-facebook'></i>"
+
 
 [[menu.topbar]]
-    weight = 2
+    weight = 1
     name = "Twitter"
     url = "https://twitter.com/RevenueAccel"
     pre = "<i class='fa fa-2x fa-twitter'></i>"
 
 [[menu.topbar]]
-    weight = 3
+    weight = 2
     name = "LinkedIn"
     url = "https://www.linkedin.com/company/revensuehealth/"
     pre = "<i class='fa fa-2x fa-linkedin'></i>"
 
 [[menu.topbar]]
-    weight = 4
+    weight = 3
     name = "Email"
     url = "mailto:info@revenue.health"
     pre = "<i class='fa fa-2x fa-envelope'></i>"
