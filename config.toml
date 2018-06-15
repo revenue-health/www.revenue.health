@@ -81,7 +81,7 @@ paginate = 50
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
 
-    logo = "img/logo.png"
+    logo = "img/logo.jpg"
     address = """<p><strong>Revenue Acceleration LLC</strong>
         <br>Silver Spring, MD USA
       </p>
@@ -95,7 +95,7 @@ paginate = 50
 # Enable or disable top bar with social icons
 [params.topbar]
     enable = true
-    text = """<p class="hidden-sm hidden-xs">Contact us on (201) 564-1178 or <a href="mailto:info@revenue.health?subject=Help%20accelerate%20my%20revenue">info@revenue.health</a>.</p>
+    text = """<p class="hidden-sm hidden-xs">Contact us on 301-478-0590 or <a href="mailto:info@revenue.health?subject=Help%20accelerate%20my%20revenue">info@revenue.health</a>.</p>
       <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>
       <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
       </p>
