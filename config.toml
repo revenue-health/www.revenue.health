@@ -81,7 +81,7 @@ paginate = 50
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
 
-    logo = "img/logo2.png"
+    logo = "img/logo.png"
     address = """<p><strong>Revenue Acceleration LLC</strong>
         <br>Silver Spring, MD USA
       </p>
