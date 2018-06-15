@@ -30,9 +30,14 @@ paginate = 50
     weight = 3
 
 [[menu.main]]
+    name = "Team"
+    url  = "/team/"
+    weight = 4
+
+[[menu.main]]
     name = "Contact"
     url  = "/contact/"
-    weight = 4
+    weight = 5
 
 # Top bar social links menu
 
@@ -70,7 +75,7 @@ paginate = 50
     googleMapsApiKey = ""
 
     # Enable the contact form by entering your Formspree.io email
-    email = "shahid.shah@netspective.com"
+    email = "info@revenue.health"
 
     # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
     style = "violet"
