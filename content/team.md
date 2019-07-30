@@ -12,5 +12,6 @@ Manoj is an accomplished Senior Executive with 14+ years experience in US Health
 Manoj is skilled in needs assessment, strategic planning, establishing priorities and delegating tasks, motivating teams to reach for their best, and following through to ensure success.
 
 ### Imran Shah - Director of IT
-Imran an IT systems engineer, certified in cyber-security and IT process frameworks (ITIL). Imran brings to the team just under a decade of experience as a technical IT Consultant, having held [non-government] positions at multiple US Federal Government agencies. He spent several years as a Systems Administrator, before moving into the role of Systems Engineer.
-More recently, Imran has added several years of experience in business analysis, technical writing, and corporate strategy planning & development; as well as knowledge of cloud based technologies.
+Imran brings to the team just under a decade of professional experience as a IT Systems Engineer, having held [non-government] positions at multiple US Federal Government agencies. Currently, Imran is a Program Manager on a federal contract, as well as an Technical IT Operations Lead on the contract itself.  Imran is certified in cyber-security as well as IT process frameworks (ITIL v3) for providing optimal service as an IT provider. More recently, Imran has added several years of experience in business analysis, technical writing, and corporate strategy planning & development - to his portfolio.
+
+### Amar Chauhan - Director of Business Development and Strategy
