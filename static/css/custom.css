@@ -1,0 +1,26 @@
+/* your styles go here */
+
+.box-image-text .image {
+  min-height: 200px;
+  max-height: 200px;
+}
+
+.box-simple {
+  min-height: 230px;
+}
+/* Added on 29.10.19 */
+.services{
+  text-align: left;
+}
+.box-image-text.blog p{
+  text-align: left;
+}
+.box-image-text .service-readmore{
+    text-align: center !important;
+}
+.service-author{
+  text-align: center !important;
+}
+.readmore{
+  text-align: center !important;
+}
