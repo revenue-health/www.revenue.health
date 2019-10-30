@@ -1,10 +1,8 @@
 +++
 title = "What is PGDM, What is new, and what is The RA Approach?"
-date = "2019-08-02T15:52:31-05:00"
-tags = ["PGDM"]
-categories = ["PGDM"]
-banner = "img/resources/pgdm.png"
 +++
+
+![PGDM](/img/resources/PGDM.png)
 
 **New payment episode timings**: PDGM will break up the standard 60-day episode of care into one of two 30-day periods. That means 30-day periods will be implemented as a basis for payment vs. the 60-day periods used now. Each 30-day period is grouped into one of 12 clinical categories based on the patient’s main diagnosis.
 
