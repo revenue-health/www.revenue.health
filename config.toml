@@ -36,7 +36,7 @@ paginate = 50
 
 [[menu.main]]
     name = "Team"
-    url  = "/team/"
+    url  = "/executive-team/"
     weight = 5
 
 [[menu.main]]
