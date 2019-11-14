@@ -35,6 +35,12 @@ HUGO_ENABLEGITINFO = "true"
   status = 301
   force = false
   
+  [[redirects]]
+  from = "/pgdm"
+  to = "/pdgm/"
+  status = 301
+  force = false
+  
   [[redirects]] 
   from = "/team"
   to = "/executive-team"

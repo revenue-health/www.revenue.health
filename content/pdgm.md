@@ -1,5 +1,5 @@
 +++
-title = "What is PGDM, What is new, and what is The RA Approach?"
+title = "What is PDGM, What is new, and what is The RA Approach?"
 +++
 
 ![PGDM](/img/resources/PGDM.png)
