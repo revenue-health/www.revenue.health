@@ -19,9 +19,9 @@
                     <div class="col-md-12">
                         <div class="news-banner-image">
                             {{ if .Params.banner }}
-                            <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-responsive" alt="">
+                            <img src="{{ .Params.banner | absURL }}" class="img-responsive" alt="">
                             {{ else }}
-                            <img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
+                            <img src="img/placeholder.png | absURL" class="img-responsive" alt="">
                             {{ end }}
                         </div>
                     </div>

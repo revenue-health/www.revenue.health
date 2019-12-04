@@ -14,7 +14,6 @@
                 {{ partial "bread-crumb.html" . }}
                 <div class="row">
                     <!-- *** LEFT COLUMN *** -->
-
                     <div class="col-md-9" id="blog-listing-medium">
                         {{ $paginator := .Paginate (where .Data.Pages "Type" "news") }}
                         {{ range $paginator.Pages }}
@@ -24,9 +23,9 @@
                                     <div>
                                         <a href="{{ .Permalink }}">
                                             {{ if .Params.banner }}
-                                            <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-responsive" alt="">
+                                            <img src="{{.Params.banner | absURL }}" class="img-responsive" alt="">
                                             {{ else }}
-                                            <img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
+                                            <img src="img/placeholder.png | absURL" class="img-responsive" alt="">
                                             {{ end }}
                                         </a>
                                     </div>
