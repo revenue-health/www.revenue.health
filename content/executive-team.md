@@ -2,6 +2,8 @@
 title = "Executive Team"
 description = "Executive Team"
 keywords = ["Executive Team","CEO","COO", "Director of IT"]
+breadcrumbs = ["Home","Team"]
+breadcrumbLinks = ["/","/"]
 +++
 
 # Meet the Team --

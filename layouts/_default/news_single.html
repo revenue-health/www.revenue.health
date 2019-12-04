@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{ partial "head.html" . }}
+
+<body>
+    <div id="all">
+        <header>
+            {{ partial "nav.html" . }}
+        </header>
+        {{ partial "breadcrumbs.html" . }}
+
+        <div id="content">
+            {{ if isset .Params "id" }}
+            {{ partial .Params.id . }}
+            {{ else }}
+            <div class="container">
+                {{ partial "bread-crumb.html" . }}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="news-banner-image">
+                            {{ if .Params.banner }}
+                            <img src="{{ .Site.BaseURL}}{{ .Params.banner }}" class="img-responsive" alt="">
+                            {{ else }}
+                            <img src="{{ .Site.BaseURL}}img/placeholder.png" class="img-responsive" alt="">
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="clearfix">
+                            <p class="date-comments">
+                                Posted {{ .Date.Format .Site.Params.date_format }} via <a target="_blank"
+                                    href="{{ .Params.cleanUrl }}">
+                                    {{ .Params.sourceBaseUrl }}</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="img-class">
+                            {{ .Content | safeHTML }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <hr>
+                    {{ partial "social-share.html" . }}
+                </div>
+                <h3 class="text-center next-ttl">Next Article</h3>
+                <nav class="side-padding">
+                    {{ with .PrevInSection }}
+                    {{ .Render "li-next" }}
+                    {{ end }}
+
+                </nav>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+            {{ end }}
+        </div>
+        <!-- /#content -->
+        {{ partial "footer.html" . }}
+    </div>
+    <!-- /#all -->
+    {{ partial "scripts.html" . }}
+</body>
+
+</html>

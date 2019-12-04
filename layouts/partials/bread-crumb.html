@@ -1,0 +1,35 @@
+<div id="breadcrumbs" class="new-ofer-breadcrumbs">
+  <nav aria-label="breadcrumb mx-auto" role="navigation">
+    <ol class="breadcrumb">
+      {{ if isset .Params "breadcrumbs" }}
+      {{ $length := (len .Params.breadcrumbs) }}
+      {{ range $elem_index, $breadcrumb := .Params.breadcrumbs  }}
+      {{ with $.Params.breadcrumbLinks }}
+      {{ $path := index . $elem_index }}
+      {{ $path_url := path.Join $.Site.Params.hostName $path }}
+      {{ if eq $elem_index 0}}
+      <li class="breadcrumb-item"><a href="{{ $path_url }}">{{ $breadcrumb }}</a></li>
+      {{ else if ne $path "/"  }}
+      <li class="breadcrumb-item"><a href="{{ $path_url }}">{{ $breadcrumb }}</a></li>
+      {{ else }}
+      <li class="breadcrumb-item active" aria-current="page">{{ $breadcrumb }}</li>
+      {{ end }}
+      {{ end }}
+      {{ end }}
+      {{else}}
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      {{ $length := (len (split .URL "/")) }}
+      {{ range $elem_index, $breadcrumb := (split .URL "/") }}
+      {{ if gt (len . ) 0 }}
+      {{ if ne $elem_index (sub $length 2) }}
+      <li class="breadcrumb-item"><a href="/{{ . }}">{{ humanize (replace . "posts" "blog") }}</a></li>
+      {{else}}
+      <li class="breadcrumb-item active" aria-current="page">{{ . }}</li>
+      {{ end }}
+      {{ end }}
+      {{ end }}
+      {{end}}
+    </ol>
+  </nav>
+  <div id="es_total" class="pull-right" style="display:none"></div>
+</div>

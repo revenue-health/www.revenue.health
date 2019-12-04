@@ -1,0 +1,19 @@
+<a href="{{ .Permalink }}" class="card blog-card card-bg" rel="bookmark">
+  {{ if isset .Params "banner" }}
+  <div class="card-img-container">
+      <img src="{{.Params.banner | absURL }}" class="card-img"
+        {{ if isset .Params "description" }}alt="{{.Params.description}}" {{end}}>
+  </div>
+  {{ else }}
+  <div class="card-img-container">
+      <img class="card-img" src="/img/no-image-article.jpg">
+  </div>
+  {{ end }}
+  <article class="card-body">
+    <h2 class="card-title">{{ .Title }}</h2>
+    <div class="card-subtext muted-text">
+      <p>Posted 
+          {{ .Date.Format .Site.Params.date_format }} via {{ .Params.sourceBaseUrl }}</p>
+    </div>
+  </article>
+</a>

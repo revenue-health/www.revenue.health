@@ -2,6 +2,8 @@
 title = "FAQ"
 description = "Frequently asked questions"
 keywords = ["FAQ","How do I","questions","what if"]
+breadcrumbs = ["Home","FAQ"]
+breadcrumbLinks = ["/","/"]
 +++
 
 ## Why Us?

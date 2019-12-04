@@ -7,7 +7,7 @@ defaultContentLanguage = "en"
 # googleAnalytics = "" #TODO need to add GA code
 
 # Define the number of posts per page
-paginate = 50
+paginate = 10
 
 [menu]
 
@@ -29,20 +29,25 @@ paginate = 50
     weight = 3
 
 [[menu.main]]
+    name = "News"
+    url  = "/news/"
+    weight = 4
+
+[[menu.main]]
     name = "FAQ"
     identifier = "faq"
     url  = "/faq/"
-    weight = 4
+    weight = 5
 
 [[menu.main]]
     name = "Team"
     url  = "/executive-team/"
-    weight = 5
+    weight = 6
 
 [[menu.main]]
     name = "Contact"
     url  = "/contact/"
-    weight = 6
+    weight = 7
 
 # Top bar social links menu
 
@@ -153,3 +158,5 @@ paginate = 50
     enable = true
     title = "Learn from our Experts"
     subtitle = "We know what we're doing. But don't just take our word for it, visit our blog often to see how we solve problems for our customers."
+[taxonomies]
+    news_sources = "news/source"
