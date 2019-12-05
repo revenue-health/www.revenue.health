@@ -10,13 +10,13 @@
   {{ if .Keywords }}
   <meta name="keywords" content="{{ delimit .Keywords ", " }}">
   {{ else if .Site.Params.DefaultKeywords }}
-  <meta name="keywords" content="{{ delimit .Site.Params.DefaultKeywords ", " }}">	
+  <meta name="keywords" content="{{ delimit .Site.Params.DefaultKeywords ", " }}">
   {{ end }}
 
   {{ if .Description }}
   <meta name="description" content="{{ .Description }}">
   {{ else if .Site.Params.DefaultDescription }}
-  <meta name="description" content="{{ .Site.Params.DefaultDescription }}">	
+  <meta name="description" content="{{ .Site.Params.DefaultDescription }}">
   {{ end }}
 
   {{ .Hugo.Generator }}
@@ -34,9 +34,9 @@
 
   <!-- Theme stylesheet, if possible do not edit this stylesheet -->
   {{ if and (isset .Site.Params "style") .Site.Params.style }}
-    <link href="{{ .Site.BaseURL }}css/style.{{ .Site.Params.style }}.css" rel="stylesheet" id="theme-stylesheet">
+  <link href="{{ .Site.BaseURL }}css/style.{{ .Site.Params.style }}.css" rel="stylesheet" id="theme-stylesheet">
   {{ else }}
-    <link href="{{ .Site.BaseURL }}css/style.default.css" rel="stylesheet" id="theme-stylesheet">
+  <link href="{{ .Site.BaseURL }}css/style.default.css" rel="stylesheet" id="theme-stylesheet">
   {{ end }}
 
 
@@ -60,18 +60,19 @@
   <link href="{{ .Site.BaseURL }}css/owl.theme.css" rel="stylesheet">
 
   <link rel="alternate" href="{{ "/index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <!-- Facebook OpenGraph tags -->
   <meta property="og:title" content="{{ .Title }}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ .URL }}/" />
   <!--<meta property="og:image" content="/img/carousel/revenue-cycle-management.jpg" />-->
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PWRLQZP');</script>
-<!-- End Google Tag Manager -->	
+  <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PWRLQZP');</script>
+  <!-- End Google Tag Manager -->
 </head>

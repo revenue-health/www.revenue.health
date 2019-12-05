@@ -18,4 +18,20 @@
     } else {
         $("#nav_home").addClass("active");
     }
+    $('.submit-contact-form').prop('disabled', 'disabled');
+    $('.submit-contact-form').addClass('isDisabled');
+    $('#contact-form').on('blur keyup change', 'textarea,input', function (event) {
+        validateForm('#contact-form');
+    });
+
+    function validateForm(id) {
+        var valid = $(id).validate().checkForm();
+        if (valid) {
+            $('.submit-contact-form').prop('disabled', false);
+            $('.submit-contact-form').removeClass('isDisabled');
+        } else {
+            $('.submit-contact-form').prop('disabled', 'disabled');
+            $('.submit-contact-form').addClass('isDisabled');
+        }
+    }
 })(); 

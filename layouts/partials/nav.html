@@ -26,15 +26,15 @@
           {{ range .Site.Menus.main }}
           <li class="dropdown navbar-li" id="nav_{{ .Name | lower }}">
             {{ if .HasChildren }}
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+            <a id="header_{{ .Name | lower }}" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
               aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
             <ul class="dropdown-menu">
               {{ range .Children }}
-              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+              <li><a id="header_{{ .Name | lower }}" href="{{ .URL }}">{{ .Name }}</a></li>
               {{ end }}
             </ul>
             {{ else }}
-            <a href="{{ .URL }}">{{ .Name }}</a>
+            <a id="header_{{ .Name | lower }}" href="{{ .URL }}">{{ .Name }}</a>
             {{ end  }}
           </li>
           {{ end }}
