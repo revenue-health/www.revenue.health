@@ -4,6 +4,8 @@ date = "2018-05-11T13:07:31+02:00"
 tags = ["approach", "compliance"]
 categories = ["compliance"]
 banner = "img/resources/compliance-guide.jpg"
+breadcrumbs = ["Home","Blog","Our Compliance Strategy"]
+breadcrumbLinks = ["/","/blog","/"]
 +++
 
 At Revenue Health, our Human Resource section conducts widespread background checks on all new employees. Once the checks are confirmed only then the employees can access systems in our delivery centers with valid login IDs and passwords. A confidentiality agreement is signed by all employees at the time of joining the organization and employees are aware that they will be penalized for any security violation. At regular intervals, Revenue Health conducts compliance training programs for all employees. This further ensures awareness and ethical work standards. By adopting the best practices approach to privacy and security, we are committed to delivering services and products that enable our clients to meet HIPAA requirements.

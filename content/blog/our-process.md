@@ -4,6 +4,8 @@ date = "2018-05-11T13:07:31+02:00"
 tags = ["process"]
 categories = ["approach"]
 banner = "img/resources/medical-billing-flowchart.png"
+breadcrumbs = ["Home","Blog","Our Process"]
+breadcrumbLinks = ["/","/blog","/"]
 +++
 
 Revenue cycle management (RCM) involves a series of steps that looks at potential problems and opportunities for enhancing revenue for a hospital. The entire revenue cycle starts from a patient’s admission to the hospital, treatment and discharge to post discharge claims and account settling.
