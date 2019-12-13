@@ -29,19 +29,26 @@ paginate = 10
     weight = 3
 
 [[menu.main]]
+    name = "News"
+    url  = "/news/"
+    weight = 4
+
+[[menu.main]]
     name = "FAQ"
     identifier = "faq"
     url  = "/faq/"
-    weight = 4
+    weight = 5
 
 [[menu.main]]
     name = "Team"
     url  = "/executive-team/"
-    weight = 5
+    weight = 6
 
 [[menu.main]]
     name = "Contact"
     url  = "/contact/"
+    weight = 7
+	
 [footermenu]
 # Footer menu
 [[menu.footermenu]]
@@ -80,7 +87,7 @@ paginate = 10
 [[menu.footermenu]]
     name = "Sitemap"
     url  = "/sitemap/"
-    weight = 7
+    weight = 8
 
 # Top bar social links menu
 
