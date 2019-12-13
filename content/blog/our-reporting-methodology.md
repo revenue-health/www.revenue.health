@@ -4,6 +4,8 @@ date = "2018-05-12T13:07:31+02:00"
 tags = ["approach"]
 categories = ["approach"]
 banner = "img/resources/reporting-methodology.jpg"
+breadcrumbs = ["Home","Blog","Reporting Methodology"]
+breadcrumbLinks = ["/","/blog","/"]
 +++
 
 We are dedicated to providing unmatched precision and transparency in our client relationships. We provide you with access to a dashboard where you can track and monitor your process health. We work with you to develop tailored reporting templates to enable you to see your practice’s financial performance and help you to identify opportunities for enhancement.
