@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
+<div itemscope itemtype = "https://schema.org/MedicalBusiness"> 
 {{ partial "head.html" . }}
 
 <body>
@@ -7,7 +8,8 @@
         <header>
             {{ partial "nav.html" . }}
         </header>
-        {{ partial "breadcrumbs.html" . }}
+        <div itemprop = "diversityStaffingReport" itemscope itemtype = "https://schema.org/Article">
+        {{ partial "breadcrumbs.html" . }}  
 
         <div id="content">
             {{ if isset .Params "id" }}
@@ -19,9 +21,9 @@
                     <div class="col-md-12">
                         <div class="news-banner-image">
                             {{ if .Params.banner }}
-                            <img src="{{ .Params.banner | absURL }}" class="img-responsive" alt="">
+                            <img itemprop = "image" src="{{ .Params.banner | absURL }}" class="img-responsive" alt="{{ .Title }}" title="{{ .Title }}">
                             {{ else }}
-                            <img src="img/placeholder.png | absURL" class="img-responsive" alt="">
+                            <img itemprop = "image" src="img/placeholder.png | absURL" class="img-responsive" alt="{{ .Title }}" title="{{ .Title }}">
                             {{ end }}
                         </div>
                     </div>
@@ -29,17 +31,18 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="clearfix">
-                            <p class="date-comments">
-                                Posted {{ .Date.Format .Site.Params.date_format }} via <a target="_blank"
+                            <p class="date-comments"  itemprop = "datePublished">
+                                Posted {{ .Date.Format .Site.Params.date_format }} via <a target="_blank" itemprop = "publisher" itemscope itemtype = "https://schema.org/Organization"
                                     href="{{ .Params.cleanUrl }}">
                                     {{ .Params.sourceBaseUrl }}</a>
+                                <a target="_blank" itemprop = "author" href="{{ .Params.sourceBaseUrl }}">{{ .Params.sourceBaseUrl }}</a>
                             </p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="img-class">
+                        <div class="img-class" itemprop = "articleBody">
                             {{ .Content | safeHTML }}
                         </div>
                     </div>
@@ -48,23 +51,27 @@
                     <hr>
                     {{ partial "social-share.html" . }}
                 </div>
+                 {{ with .PrevInSection }}
                 <h3 class="text-center next-ttl">Next Article</h3>
                 <nav class="side-padding">
-                    {{ with .PrevInSection }}
+                   
                     {{ .Render "li-next" }}
-                    {{ end }}
+                    
 
                 </nav>
+                {{ end }}
                 <!-- /.row -->
+            </div>
             </div>
             <!-- /.container -->
             {{ end }}
-        </div>
+       
         <!-- /#content -->
         {{ partial "footer.html" . }}
     </div>
     <!-- /#all -->
     {{ partial "scripts.html" . }}
 </body>
+</div>
 
 </html>

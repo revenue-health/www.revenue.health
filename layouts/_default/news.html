@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-
+ <div itemscope itemtype = "https://schema.org/MedicalBusiness">
 {{ partial "head.html" . }}
 
 <body>
@@ -23,9 +23,9 @@
                                     <div>
                                         <a href="{{ .Permalink }}">
                                             {{ if .Params.banner }}
-                                            <img src="{{.Params.banner | absURL }}" class="img-responsive" alt="">
+                                            <img src="{{.Params.banner | absURL }}" class="img-responsive" alt="{{ .Title }}" title="{{ .Title }}">
                                             {{ else }}
-                                            <img src="img/placeholder.png | absURL" class="img-responsive" alt="">
+                                            <img src="img/placeholder.png | absURL" class="img-responsive" alt="{{ .Title }}" title="{{ .Title }}">
                                             {{ end }}
                                         </a>
                                     </div>
@@ -99,5 +99,5 @@
     {{ partial "scripts.html" . }}
 
 </body>
-
+</div>
 </html>

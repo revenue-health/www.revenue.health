@@ -78,15 +78,43 @@ _________________________________________________________ -->
 <div id="copyright">
     <div class="container">
         <div class="col-md-12">
+             <div class="navbar-collapse collapse" id="navigation">
+        <ul class="nav navbar-nav ">
+          {{ range .Site.Menus.footermenu }}
+          <li class="dropdown navbar-li" id="nav_{{ .Name | lower }}">
+            {{ if .HasChildren }}
+            <a id="footer_{{ .Name | lower }}" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">{{ .Name }} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              {{ range .Children }}
+              <li><a id="footer_r_{{ .Name | lower }}" href="{{ .URL }}">{{ .Name }}</a></li>
+              {{ end }}
+            </ul>
+            {{ else }}
+            <a id="footer__{{ .Name | lower }}" href="{{ .URL }}">{{ .Name }}</a>
+            {{ end  }}
+          </li>
+          {{ end }}
+        </ul>
+      </div>
             {{ if isset .Site.Params "copyright" }}
-            <p class="pull-left">{{ .Site.Params.copyright | safeHTML }}</p>
+            <p class="footer-copyright">{{ .Site.Params.copyright | safeHTML }}</p>
             {{ end }}
-            <p class="pull-right">
+            <!-- <p class="pull-right">
               {{ i18n "templateBy" }} <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>.
               <!-- Not removing this link is part of the licence conditions of the template. Thanks for understanding :) -->              
-            </p>
+            <!--</p>--> 
+            
+               <div class="social">
+          {{ range .Site.Menus.topbar.ByWeight }}
+          <a href="{{ .URL }}" target="_blank" id="footer_{{ .Name}}" style="opacity: 1;">{{ .Pre }}</a>
+          {{ end }}
+        </div>          
+            
+                
         </div>
     </div>
+  </div>
 </div>
 <!-- /#copyright -->
 

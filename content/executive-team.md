@@ -1,12 +1,13 @@
 +++
-title = "Executive Team"
-description = "Executive Team"
+title = "Executive Team - Revenue Acceleration LLC"
+metatitle ="Team - Home Healthcare Billing Companies | Revenue Acceleration LLC"
+description = "Manoj Navni execute the business with a efficient team and a  strategic plan to make best  results in healthcare administration and revenue cycle management."
 keywords = ["Executive Team","CEO","COO", "Director of IT"]
 breadcrumbs = ["Home","Team"]
 breadcrumbLinks = ["/","/"]
 +++
 
-# Meet the Team --
+## Meet the Team
 Our Executive Team brings together decades of experience in Revenue Cycle Management, Healthcare Administration, and Information Systems Engineering/Administration - to provide you with the best way to get paid!
 
 ### Manoj Navni - Chief Executive Officer

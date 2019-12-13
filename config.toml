@@ -1,5 +1,5 @@
 baseurl = "/"
-title = "Revenue Acceleration LLC"
+title = "Healthcare Revenue Cycle Management & Administration | Revenue Acceleration LLC"
 theme = "universal"
 languageCode = "en-us"
 defaultContentLanguage = "en"
@@ -29,24 +29,57 @@ paginate = 10
     weight = 3
 
 [[menu.main]]
+    name = "FAQ"
+    identifier = "faq"
+    url  = "/faq/"
+    weight = 4
+
+[[menu.main]]
+    name = "Team"
+    url  = "/executive-team/"
+    weight = 5
+
+[[menu.main]]
+    name = "Contact"
+    url  = "/contact/"
+[footermenu]
+# Footer menu
+[[menu.footermenu]]
+    name = "Home"
+    url  = "/"
+    weight = 1
+[[menu.footermenu]]
+    name = "PDGM"
+    url  = "/pdgm/"
+    weight = 2
+[[menu.footermenu]]
+    name = "Blog"
+    url  = "/blog/"
+    weight = 3
+
+[[menu.footermenu]]
     name = "News"
     url  = "/news/"
     weight = 4
 
-[[menu.main]]
+[[menu.footermenu]]
     name = "FAQ"
     identifier = "faq"
     url  = "/faq/"
     weight = 5
 
-[[menu.main]]
+[[menu.footermenu]]
     name = "Team"
     url  = "/executive-team/"
     weight = 6
 
-[[menu.main]]
+[[menu.footermenu]]
     name = "Contact"
     url  = "/contact/"
+    weight = 7
+[[menu.footermenu]]
+    name = "Sitemap"
+    url  = "/sitemap/"
     weight = 7
 
 # Top bar social links menu
@@ -74,8 +107,13 @@ paginate = 10
 [params]
     viewMorePostLink = "/blog/"
     author = "Revenue Accelerators"
+    metatitle ="Healthcare Revenue Cycle Management & Administration | Revenue Acceleration LLC"
     defaultKeywords = ["revenue"]
-    defaultDescription = "Our expert opinions"
+    defaultDescription = "We provide you with the best way to get paid in Revenue Cycle Management, Healthcare Administration, and Information Systems Engineering/Administration."
+    NewsTitle ="Healthcare IT Administration News | Data Security Updates| Revenue Acceleration LLC "
+    NewsDescription ="Find  new technologies in healthcare management with Revenue Acceleration. Get updated with news on patient driven groupings model and revenue cycle management."
+    BlogTitle ="Revenue Cycle Management & Compliance Blogs | Revenue Acceleration LLC "
+    BlogDescription ="Revenue acceleration functions with  revenue cycle management (RCM) and  compliance strategy for enhancing revenue for a hospital."
 
     # Google Maps API key (if not set will default to not passing a key.)
     googleMapsApiKey = ""
@@ -87,14 +125,15 @@ paginate = 10
     style = "violet"
 
     about_us = "<p>Revenue Health is a complete Healthcare Solutions company specializing in revenue cycle management.</p>"
-    copyright = "Copyright (C) 2018 Revenue Acceleration LLC. All Rights Reserved."
+    copyright = "Copyright (C) 2019 <a href='https://www.revenue.health/'>Revenue Acceleration LLC</a> - Healthcare Revenue Cycle Management & Administration. All Rights Reserved."
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
 
     logo = "img/logo.png"
-    address = """<p><strong>Revenue Acceleration LLC</strong>
-        <br>Silver Spring, MD USA
+    logoalt ="Healthcare Revenue Cycle Management & Administration - Revenue Acceleration"
+    address = """<p><strong itemprop="name">Revenue Acceleration LLC</strong>
+        <br><span itemprop="address">Silver Spring, MD USA</span>
       </p>
       """
     latitude = "38.897663300"
@@ -106,7 +145,7 @@ paginate = 10
 # Enable or disable top bar with social icons
 [params.topbar]
     enable = true
-    text = """<p class="hidden-sm hidden-xs">Contact us on 301-478-0590 or <a href="mailto:info@revenue.health?subject=Help%20accelerate%20my%20revenue">info@revenue.health</a>.</p>
+    text = """<p class="hidden-sm hidden-xs"><span itemprop="telephone">Contact us on 301-478-0590 </span>  or <a href="mailto:info@revenue.health?subject=Help%20accelerate%20my%20revenue" id="topbarcontactinfo" itemprop="email">info@revenue.health</a></p>
       <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>
       <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
       </p>
@@ -120,6 +159,7 @@ paginate = 10
 
 [params.carousel]
     enable = true
+    h1title ="Healthcare Revenue Cycle Management & Administration"
     # All carousel items are defined in their own files. You can find example items
     # at 'data/carousel'.
     # For more informtion take a look at the README.

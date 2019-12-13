@@ -2,28 +2,28 @@
 
     <div class="row">
         <div class="col-md-8">
-
-            <section>
+        {{ partial "bread-crumb.html" . }}
+            <section class="page-content">
 
                 {{ .Content }}
                 {{ if isset .Site.Params "email" }}
                 <div class="heading">
                   <h3>{{ i18n "contactForm" }}</h3>
                 </div>
-
+                
                 <div id="contact-message"></div>
-
-                <form accept-charset="UTF-8" action="https://usebasin.com/f/e9d64b37198d" enctype="multipart/form-data" method="POST">
+                   
+                <form accept-charset="UTF-8" id="contact-form" action="https://usebasin.com/f/e9d64b37198d" enctype="multipart/form-data" method="POST">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                              <label for="name">{{ i18n "contactName" }}</label>
+                              <label for="name">{{ i18n "contactName" }}*</label>
                                 <input type="text" class="form-control" name="name" id="name" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="email">{{ i18n "contactMail" }}</label>
+                                <label for="email">{{ i18n "contactMail" }}*</label>
                                 <input type="text" class="form-control" name="email" id="email" required>
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                         </div>
 
                         <div class="col-sm-12 text-center">
-                            <button type="submit" class="btn btn-template-main"><i class="fa fa-envelope-o"></i>{{ i18n "contactSend" }}</button>
+                            <button type="submit" class="btn btn-template-main submit-contact-form"><i class="fa fa-envelope-o"></i>{{ i18n "contactSend" }}</button>
                             <input type="text" name="_gotcha" style="display:none" />
                             <input type="hidden" name="_subject" value="[RevenueAccel Sales] Primary website contact form submission" />
                             <input type="hidden" name="_cc" value="info@revenue.health" />

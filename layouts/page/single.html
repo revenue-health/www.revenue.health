@@ -25,8 +25,8 @@
             <div class="container">
                 {{ partial "bread-crumb.html" . }}
                 <div class="row">
-
-                    <div class="col-md-12">
+                       {{ $currentTag := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+                    <div class="col-md-12 page-content" id="{{ $currentTag}}">
 
                         <div class="img-class">
                           {{ .Content }}

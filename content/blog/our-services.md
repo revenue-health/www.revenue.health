@@ -1,9 +1,9 @@
 +++
 title = "Our Services"
-date = "2018-05-12T13:07:31+02:00"
+date = "2018-06-12T13:07:31+02:00"
 tags = ["approach"]
 categories = ["approach"]
-banner = "img/resources/medical-billing-process.png"
+banner = "img/resources/services.jpg"
 +++
 
 <ul class="services">

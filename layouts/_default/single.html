@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<div itemscope itemtype = "https://schema.org/MedicalBusiness"> 
+  {{ partial "head.html" . }}
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          {{ partial "nav.html" . }}
+
+        </header>
+        <div itemprop = "diversityStaffingReport" itemscope itemtype = "https://schema.org/Article">
+
+        {{ partial "breadcrumbs.html" . }}
+
+        <div id="content">
+            <div class="container">
+                 {{ partial "bread-crumb.html" . }}
+                 <div class="row">
+                    <div class="col-md-4"> </div>
+                    <div class="col-md-4"> </div>
+                    <div class="col-md-4 sidebar-conetnt">
+                 {{ partial "sidebar.html" . }}
+               
+                  </div>
+                <!--<div class="row">
+                  <div class="col-md-12 class-sidebar">
+
+                        <!-- *** MENUS AND WIDGETS *** -->
+
+                       
+
+                        <!-- *** MENUS AND FILTERS END *** -->
+
+                    <!--</div>
+                </div>-->
+                <div class="row blog-content">
+                    <div class="col-md-4 img-detail">
+                    {{ if .Params.banner }}
+                            <img itemprop = "image" src="{{ .Params.banner | absURL }}" class="img-responsive" alt="{{ .Title }}" title="{{ .Title }}">
+                            {{ else }}
+                            <img itemprop = "image" src="img/placeholder.png | absURL" class="img-responsive" alt="{{ .Title }}" title="{{ .Title }}">
+                            {{ end }}
+                     </div>
+                    <!-- *** LEFT COLUMN *** -->
+                    <div class="col-md-8 blog-content" id="blog-post">
+                        <p class="text-muted text-uppercase mb-small text-right" itemprop = "datePublished">{{ if .Params.author }}{{ i18n "authorBy" }} <a href="#">{{ .Params.author }}</a> | {{ end }}{{ .Date.Format .Site.Params.date_format }} <a itemprop="publisher" href="https://www.revenue.health/"><span itemprop="author">Revenue Acceleration</span></a></p>
+
+                        <div id="post-content" itemprop = "articleBody">
+                          {{ .Content }}
+                        </div>
+                        <!-- /#post-content -->
+                        {{ if .Site.DisqusShortname }}
+                        <div id="comments">
+                            {{ template "_internal/disqus.html" . }}
+                        </div>
+                        {{ end }}
+
+                    </div>
+                    <!-- /#blog-post -->
+
+                    <!-- *** LEFT COLUMN END *** -->
+
+                    <!-- *** RIGHT COLUMN *** -->
+
+                    
+                    <!-- /.col-md-3 -->
+
+                    <!-- *** RIGHT COLUMN END *** -->
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+
+        </div>
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+
+  </body>
+ </div>
+</html>

@@ -1,0 +1,47 @@
+<div id="breadcrumbs" class="new-ofer-breadcrumbs">
+
+
+
+<div class="section-title">Pages</div>
+<ul>
+{{ range (where .Site.Pages.ByTitle ".Type" "page") }}
+    <li><article itemscope itemtype="http://schema.org/Blog">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </article></li>
+{{ end }}
+</ul>
+
+ <div class="card-header" id="newsOne">
+    <div class="section-title">News</div>
+    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#newssection"><i class="fa fa-plus"></i> </button>                                  
+</div>
+<div id="newssection" class="collapse" aria-labelledby="newsOne" data-parent="#accordionExample">
+   <div class="card-body">
+  <ul>
+    {{ range (where .Site.Pages.ByTitle ".Type" "news") }}
+        <li><article itemscope itemtype="http://schema.org/Blog">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </article></li>
+    {{ end }}
+  </ul>
+</div>
+ </div>
+<br>
+
+<div class="card-header" id="blogOne">
+<div class="section-title">Blog</div>
+<button type="button" class="btn btn-link" data-toggle="collapse" data-target="#blogsection"><i class="fa fa-plus"></i> </button>                                  
+</div>
+<div id="blogsection" class="collapse" aria-labelledby="blogOne" data-parent="#accordionExample">
+   <div class="card-body">
+<ul>
+  
+{{ range (where .Site.Pages.ByTitle ".Type" "blog") }}
+    <li><article itemscope itemtype="http://schema.org/Blog">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </article></li>
+{{ end }}
+</ul>
+</div>
+  
+</div>

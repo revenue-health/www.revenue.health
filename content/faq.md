@@ -1,6 +1,8 @@
 +++
-title = "FAQ"
-description = "Frequently asked questions"
+title = "FAQ in Healthcare Administration & Solutions"
+metatitle ="FAQ in Healthcare Administration & Medical Billing Solutions| Revenue Acceleration LLC"
+name ="faq"
+description = "Find your answers for  queries in revenue management ,Physician Quality Reporting System and healthcare billing process"
 keywords = ["FAQ","How do I","questions","what if"]
 breadcrumbs = ["Home","FAQ"]
 breadcrumbLinks = ["/","/"]

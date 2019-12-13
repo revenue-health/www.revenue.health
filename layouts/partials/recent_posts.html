@@ -30,7 +30,7 @@
                             </div>
                             <div class="bg"></div>
                             <div class="text">
-                                <p class="buttons readmore">
+                                <p class="buttons continue_reading_blog">
                                     <a href="{{ .Permalink }}" class="btn btn-template-transparent-primary read_more_blog"><i class="fa fa-link"></i> {{ i18n "readMore" }}</a>
                                 </p>
                             </div>
@@ -44,7 +44,9 @@
                             {{ end }}
                             {{ i18n "publishedOn" }} {{ .Date.Format .Site.Params.date_format }}
                             </p>
+                            <div class="recent-content">
                             {{ .Content | safeHTML | truncate 500 }}
+                            </div>
                             <p class="read-more service-readmore">
                               <a href="{{ .Permalink }}" class="btn btn-template-main continue_reading_blog">{{ i18n "continueReading" }}</a>
                             </p>

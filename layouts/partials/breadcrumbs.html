@@ -1,0 +1,17 @@
+<div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            	{{ $currentTag := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+            	{{ $currentTagSecond := index (last 3 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+                {{ if or (eq $currentTag "blog") (eq $currentTag "news") (eq $currentTag "faq") (eq $currentTag "executive-team") (eq $currentTag "contact") (eq $currentTag "sitemap")}}
+                <h1 itemprop = "headline">{{ .Title }}</h1>
+                {{ else if $currentTagSecond}}
+                <h1 itemprop = "headline">{{ .Title }}</h1>
+                {{ else}}
+                 <h1 itemprop = "headline">{{ .Title }}</h1>
+                {{ end}}
+            </div>
+        </div>
+    </div>
+</div>

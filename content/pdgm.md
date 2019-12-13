@@ -2,9 +2,13 @@
 title = "What is PDGM, What is new, and what is The RA Approach?"
 breadcrumbs = ["Home","PDGM"]
 breadcrumbLinks = ["/","/"]
+metatitle="Patient Driven Groupings Model (PDGM) in Healthcare Solutions | Revenue Acceleration LLC"
+Description="Revenue Health ensures that your organization not only survives PDGM, but also wins under the new rules and evaluate the current state of your organization’s operations."
 +++
 
-![PGDM](/img/resources/PGDM.png)
+# Patient Driven Groupings Model (PDGM)
+
+![Patient Driven Groupings Model (PDGM)](/img/resources/pdgm.png)
 
 **New payment episode timings**: PDGM will break up the standard 60-day episode of care into one of two 30-day periods. That means 30-day periods will be implemented as a basis for payment vs. the 60-day periods used now. Each 30-day period is grouped into one of 12 clinical categories based on the patient’s main diagnosis.
 
