@@ -81,7 +81,7 @@ _________________________________________________________ -->
              <div class="navbar-collapse collapse" id="navigation">
         <ul class="nav navbar-nav ">
           {{ range .Site.Menus.footermenu }}
-          <li class="dropdown navbar-li" id="nav_{{ .Name | lower }}">
+          <li class="dropdown navbar-li" id="nav_wght_{{ .Weight}}">
             {{ if .HasChildren }}
             <a id="footer_{{ .Name | lower }}" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
               aria-expanded="false">{{ .Name }} <span class="caret"></span></a>

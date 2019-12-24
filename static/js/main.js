@@ -2,21 +2,23 @@
     var pathname = window.location.pathname;
     $(".navbar-li").removeClass("active");
     if (pathname == '/') {
-        $("#nav_home").addClass("active");
+        $("#nav_wght_1").addClass("active");
+    } else if (pathname == '/home-health/') {
+        $("#nav_wght_2").addClass("active");
     } else if (pathname.includes('/pdgm/')) {
-        $("#nav_pdgm").addClass("active");
+        $("#nav_wght_3").addClass("active");
     } else if (pathname.includes('/blog/')) {
-        $("#nav_blog").addClass("active");
+        $("#nav_wght_4").addClass("active");
     } else if (pathname.includes('/news/')) {
-        $("#nav_news").addClass("active");
+        $("#nav_wght_5").addClass("active");
     } else if (pathname.includes('/faq/')) {
-        $("#nav_faq").addClass("active");
+        $("#nav_wght_6").addClass("active");
     } else if (pathname.includes('/executive-team/')) {
-        $("#nav_team").addClass("active");
+        $("#nav_wght_7").addClass("active");
     } else if (pathname.includes('/contact/')) {
-        $("#nav_contact").addClass("active");
+        $("#nav_wght_8").addClass("active");
     } else {
-        $("#nav_home").addClass("active");
+        $("#nav_wght_1").addClass("active");
     }
     $('.submit-contact-form').prop('disabled', 'disabled');
     $('.submit-contact-form').addClass('isDisabled');
