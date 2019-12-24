@@ -2,7 +2,7 @@
 title = "What is PDGM, What is new, and what is The RA Approach?"
 breadcrumbs = ["Home","PDGM"]
 breadcrumbLinks = ["/","/"]
-metatitle="Patient Driven Groupings Model (PDGM) in Healthcare Solutions | Revenue Acceleration LLC"
+metatitle="Patient Driven Groupings Model (PDGM) | Oasis Assessment | Revenue Acceleration LLC"
 Description="Revenue Health ensures that your organization not only survives PDGM, but also wins under the new rules and evaluate the current state of your organization’s operations."
 +++
 
