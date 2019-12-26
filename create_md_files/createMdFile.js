@@ -1,7 +1,7 @@
 const request = require('request');
 const CONFIGURATION = require('./configuration');
 const fs = require('fs');
-
+const converter = require('html-to-markdown');
 getRequest = (options, json = true) => new Promise((resolve, reject) => {
     request.get(options, function (err, resp, body) {
         if (err) {
@@ -24,7 +24,7 @@ async function main() {
         'Authorization': CONFIGURATION.authToken
     }
     const options = {
-        url: CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages',
+        url: CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages?filters=[{ "updatedAt": { "operator": ">t-", "values":[1]}}]',
         method: 'GET',
         headers: headers,
     }
@@ -37,10 +37,10 @@ async function main() {
         for (let i = 0; i < totalLength; i++) {
             offset = i + 1;
             if (i === Number(totalLength - 1)) {
-                options.url = CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages?offset=' + offset + '&pageSize=' + total;
+                options.url = CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages?offset=' + offset + '&pageSize=' + total+ '&filters=[{ "updatedAt": { "operator": ">t-", "values":[1]}}]';
             } else {
                 total = total - 50;
-                options.url = CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages?offset=' + offset + '&pageSize=' + 50;
+                options.url = CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages?offset=' + offset + '&pageSize=' + 50+ '&filters=[{ "updatedAt": { "operator": ">t-", "values":[1]}}]';
             }
 
             await getRequest(options).then(async function (result) {
@@ -169,7 +169,7 @@ async function main() {
                                 // }
                                 mdContent = mdContent + "breadcrumbs:\n - Home\n - News\n - " + mdFileName + "\n";
                                 mdContent = mdContent + "breadcrumbLinks:\n - / \n - /news\n - / \n";
-                                mdContent = mdContent + "---\n" + item['description']['raw'] + "\n";
+                                mdContent = mdContent + "---\n" + converter.convert(item['description']['raw']) + "\n";
                                 if (fs.existsSync('content/news/' + mdFileName + '.md')) {
                                     fs.unlink('content/news/' + mdFileName + '.md', (err) => {
                                         if (err) {

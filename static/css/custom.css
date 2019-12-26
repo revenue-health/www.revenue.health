@@ -6,6 +6,9 @@
 p.buttons.continue_reading_blog {
     text-align: center !important;
 }
+.box-image-text.blog h4 {
+    min-height: 55px;
+}
 
 .box-simple {
   min-height: 230px;
@@ -380,7 +383,76 @@ div#contact {
 }
 
 
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .navbar ul.nav > li > a{
+    letter-spacing: 0 !important;
+    font-size: 13px;
+    padding: 10px 10px;
+  }
+  .home-carousel h2{
+    font-size: 25px;
+  }
+  h1.main-title {
+    width: 100%;
+    font-size: 30px;
+}
+#heading-breadcrumbs h1 {
+    font-size: 20px;
+    letter-spacing: 0;
+}
+.page-content h1 {
+    font-size: 25px;
+}
+.box-simple {
+    min-height: 150px;
+}
+
+
+}
+
+
 @media (max-width: 480px) {
+
+  /*Riju*/
+  #top i {
+    font-size: 20px;
+  }
+  .home-carousel h2{
+    font-size: 25px;
+  }
+  .home-carousel ul li {
+    font-weight: normal;
+}
+h1.main-title {
+    width: 100%;
+    font-size: 30px;
+}
+.box-simple {
+    min-height: 140px;
+}
+#copyright li {
+    width: auto;
+    float: left;
+}
+#copyright li a{
+  cursor: pointer;
+}
+.heading h2{
+  font-size: 20px;
+}
+#heading-breadcrumbs h1{
+  font-size: 20px;
+}
+.page-content h1 {
+    font-size: 20px;
+}
+#blog-listing-medium .post h2 a {
+    font-size: 20px;
+    letter-spacing: 0;
+}
+
+
 
 #copyright div#navigation{
   width: auto !important;

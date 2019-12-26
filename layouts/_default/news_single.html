@@ -32,31 +32,31 @@
                     <div class="col-md-12">
                         <div class="clearfix">
                             <p class="date-comments"  itemprop = "datePublished">
-                                Posted {{ .Date.Format .Site.Params.date_format }} via <a target="_blank" itemprop = "publisher" itemscope itemtype = "https://schema.org/Organization"
-                                    href="{{ .Params.cleanUrl }}">
-                                    {{ .Params.sourceBaseUrl }}</a>
-                                <a target="_blank" itemprop = "author" href="{{ .Params.sourceBaseUrl }}">{{ .Params.sourceBaseUrl }}</a>
-                            </p>
+                                        Posted {{ .Date.Format .Site.Params.date_format }} via <a target="_blank"
+                                            itemprop="publisher" itemscope itemtype="https://schema.org/Organization"
+                                            href="{{ .Params.cleanUrl }}">
+                                            {{ .Params.sourceBaseUrl }}</a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="img-class" itemprop = "articleBody">
-                            {{ .Content | safeHTML }}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="img-class" itemprop="articleBody">
+                                    {{ .Content | safeHTML }}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <hr>
-                    {{ partial "social-share.html" . }}
-                </div>
-                 {{ with .PrevInSection }}
-                <h3 class="text-center next-ttl">Next Article</h3>
-                <nav class="side-padding">
-                   
-                    {{ .Render "li-next" }}
-                    
+                        <div class="row">
+                            <hr>
+                            {{ partial "social-share.html" . }}
+                        </div>
+                        {{ with .PrevInSection }}
+                        <h3 class="text-center next-ttl">Next Article</h3>
+                        <nav class="side-padding">
+
+                            {{ .Render "li-next" }}
+
 
                 </nav>
                 {{ end }}
