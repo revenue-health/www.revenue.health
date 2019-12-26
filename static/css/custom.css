@@ -412,6 +412,48 @@ div#contact {
 }
 
 
+@media (min-width: 481px) and (max-width: 767px) {
+
+   #top i {
+    font-size: 20px;
+  }
+  .home-carousel h2{
+    font-size: 25px;
+  }
+  .home-carousel ul li {
+    font-weight: normal;
+}
+h1.main-title {
+    width: 100%;
+    font-size: 30px;
+}
+.box-simple {
+    min-height: 140px;
+}
+#copyright li {
+    width: auto;
+    float: left;
+}
+#copyright li a{
+  cursor: pointer;
+}
+.heading h2{
+  font-size: 20px;
+}
+#heading-breadcrumbs h1{
+  font-size: 20px;
+}
+.page-content h1 {
+    font-size: 20px;
+}
+#blog-listing-medium .post h2 a {
+    font-size: 20px;
+    letter-spacing: 0;
+}
+
+}
+
+
 @media (max-width: 480px) {
 
   /*Riju*/
