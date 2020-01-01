@@ -24,7 +24,7 @@ async function main() {
         'Authorization': CONFIGURATION.authToken
     }
     const options = {
-        url: CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages?filters=[{ "updatedAt": { "operator": ">t-", "values":[1]}}]',
+        url: CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages',
         method: 'GET',
         headers: headers,
     }
@@ -37,10 +37,10 @@ async function main() {
         for (let i = 0; i < totalLength; i++) {
             offset = i + 1;
             if (i === Number(totalLength - 1)) {
-                options.url = CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages?offset=' + offset + '&pageSize=' + total+ '&filters=[{ "updatedAt": { "operator": ">t-", "values":[1]}}]';
+                options.url = CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages?offset=' + offset + '&pageSize=' + total;
             } else {
                 total = total - 50;
-                options.url = CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages?offset=' + offset + '&pageSize=' + 50+ '&filters=[{ "updatedAt": { "operator": ">t-", "values":[1]}}]';
+                options.url = CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages?offset=' + offset + '&pageSize=' + 50;
             }
 
             await getRequest(options).then(async function (result) {
@@ -170,25 +170,11 @@ async function main() {
                                 mdContent = mdContent + "breadcrumbs:\n - Home\n - News\n - " + mdFileName + "\n";
                                 mdContent = mdContent + "breadcrumbLinks:\n - / \n - /news\n - / \n";
                                 mdContent = mdContent + "---\n" + converter.convert(item['description']['raw']) + "\n";
-                                if (fs.existsSync('content/news/' + mdFileName + '.md')) {
-                                    fs.unlink('content/news/' + mdFileName + '.md', (err) => {
-                                        if (err) {
-                                            console.error(err)
-                                            return
-                                        }
-                                        fs.writeFile('content/news/' + mdFileName + '.md', mdContent, function (err) {
-                                            if (err) { throw err } else {
-                                                console.log(mdFileName, 'Saved successfully!');
-                                            }
-                                        });
-                                    });
-                                } else {
-                                    fs.writeFile('content/news/' + mdFileName + '.md', mdContent, function (err) {
-                                        if (err) { throw err } else {
-                                            console.log(mdFileName, 'Saved successfully!');
-                                        }
-                                    });
-                                }
+                                fs.writeFile('content/news/' + mdFileName + '.md', mdContent, function (err) {
+                                    if (err) { throw err } else {
+                                        console.log(mdFileName, 'Saved successfully!');
+                                    }
+                                });
                             }
                         });
                     }
