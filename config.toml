@@ -136,7 +136,7 @@ paginate = 10
     style = "violet"
 
     about_us = "<p>Revenue Health is a complete Healthcare Solutions company specializing in revenue cycle management.</p>"
-    copyright = "Copyright (C) 2019 <a href='https://www.revenue.health/'>Revenue Acceleration LLC</a> - Healthcare Revenue Cycle Management & Administration. All Rights Reserved."
+    copyright = "Copyright (C) 2020 <a href='https://www.revenue.health/'>Revenue Acceleration LLC</a> - Healthcare Revenue Cycle Management & Administration. All Rights Reserved."
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
