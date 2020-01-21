@@ -15,8 +15,10 @@
         $("#nav_wght_6").addClass("active");
     } else if (pathname.includes('/executive-team/')) {
         $("#nav_wght_7").addClass("active");
-    } else if (pathname.includes('/contact/')) {
+    } else if (pathname.includes('/advisory-board/')) {
         $("#nav_wght_8").addClass("active");
+    } else if (pathname.includes('/contact/')) {
+        $("#nav_wght_9").addClass("active");
     } else {
         $("#nav_wght_1").addClass("active");
     }

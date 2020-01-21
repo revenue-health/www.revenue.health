@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  {{ partial "head.html" . }}
+
+  <body>
+
+    <div id="all">
+
+        <header>
+
+          {{ partial "nav.html" . }}
+
+        </header>
+
+        {{ partial "breadcrumbs.html" . }}
+
+        <div id="content">
+            {{ if isset .Params "id" }}
+
+              {{ partial .Params.id . }}
+
+            {{ else }}
+
+            <div class="container">
+                {{ partial "bread-crumb.html" . }}
+                <div class="row">
+                       {{ $currentTag := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+                    <div class="col-md-12 page-content" id="{{ $currentTag}}">
+
+                        <div class="img-class photo-wrap">
+                          {{ .Content }}
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container -->
+
+            {{ end }}
+        </div>
+        <!-- /#content -->
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+
+  </body>
+</html>

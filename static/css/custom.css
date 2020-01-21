@@ -544,3 +544,12 @@ h1.main-title {
 .testimonials .item{
   padding-bottom: 30px !important;
 }
+.photo-wrap img {
+	width: 135px;
+	float: left;
+	margin-right: 25px;
+	margin-bottom:15px;
+}
+.photo-wrap p {
+clear:left!important;
+}

@@ -50,9 +50,14 @@ paginate = 10
     weight = 7
 
 [[menu.main]]
+    name = "Advisory Board"
+    url  = "/advisory-board/"
+    weight = 8	
+	
+[[menu.main]]
     name = "Contact"
     url  = "/contact/"
-    weight = 8
+    weight = 9
 
 	
 [footermenu]
