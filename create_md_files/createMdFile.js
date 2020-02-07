@@ -36,13 +36,7 @@ async function main() {
         let offset = 0;
         for (let i = 0; i < totalLength; i++) {
             offset = i + 1;
-            if (i === Number(totalLength - 1)) {
-                options.url = CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages?offset=' + offset + '&pageSize=' + total;
-            } else {
-                total = total - 50;
-                options.url = CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages?offset=' + offset + '&pageSize=' + 50;
-            }
-
+            options.url = CONFIGURATION.apiUrl + 'projects/' + CONFIGURATION.projectId + '/work_packages?offset=' + offset + '&pageSize=' + 50;
             await getRequest(options).then(async function (result) {
                 workPackages = result['_embedded']['elements'];
                 for (const item of workPackages) {
@@ -57,7 +51,8 @@ async function main() {
                         if (item['startDate']) {
                             item['createdAt'] = item['startDate'];
                         }
-                        mdContent = "--- \ntitle: " + '"' + item['subject'] + '"' + "\ncleanUrl: " + '"' + item[CONFIGURATION.cleanUrlField] + "" + '"' + "\ndate: " + '"' + item['createdAt'] + "" + '"' + "\n";
+                        var title = item['subject'].replace(/[^\x20-\x7E]/g, '')
+                        mdContent = "--- \ntitle: " + '"' + title + '"' + "\ncleanUrl: " + '"' + item[CONFIGURATION.cleanUrlField] + "" + '"' + "\ndate: " + '"' + item['createdAt'] + "" + '"' + "\n";
                         mdContent = mdContent + "sourceBaseUrl: " + '"' + sourceBaseUrl + '"' + "\n";
                         let attachMentUrl = item['_links']['attachments']['href'];
                         attachMentUrl = CONFIGURATION.baseUrl + attachMentUrl;
@@ -156,20 +151,9 @@ async function main() {
                                 }
                                 const layoutName = 'news_single';
                                 mdContent = mdContent + "layout: " + '"' + layoutName + '"' + "\n";
-                                // if (ogSiteName) {
-                                //     const siteName = ogSiteName.replace(/\s/g, '-');
-                                //     const sourcePath = '/news/source/' + siteName.toLowerCase();
-                                //     mdContent = mdContent + "breadcrumbs:\n - Home\n - News\n - " + ogSiteName + "\n - " + mdFileName + "\n";
-                                //     mdContent = mdContent + "breadcrumbLinks:\n - / \n - /news\n - " + sourcePath + "\n - / \n";
-                                //     mdContent = mdContent + "source: " + '"' + ogSiteName + '"' + "\n";
-                                //     mdContent = mdContent + "news/source: " + '"' + ogSiteName + '"' + "\n";
-                                // } else {
-                                //     mdContent = mdContent + "breadcrumbs:\n - Home\n - News\n - " + mdFileName + "\n";
-                                //     mdContent = mdContent + "breadcrumbLinks:\n - / \n - /news\n - / \n";
-                                // }
                                 mdContent = mdContent + "breadcrumbs:\n - Home\n - News\n - " + mdFileName + "\n";
                                 mdContent = mdContent + "breadcrumbLinks:\n - / \n - /news\n - / \n";
-                                mdContent = mdContent + "---\n" + converter.convert(item['description']['raw']) + "\n";
+                                mdContent = mdContent + "---\n" + converter.convert(item['description']['raw'].replace(/[^\x20-\x7E]/g, '')) + "\n";
                                 fs.writeFile('content/news/' + mdFileName + '.md', mdContent, function (err) {
                                     if (err) { throw err } else {
                                         console.log(mdFileName, 'Saved successfully!');
