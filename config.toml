@@ -49,10 +49,10 @@ paginate = 10
     url  = "/executive-team/"
     weight = 7
 
-[[menu.main]]
-    name = "Advisory Board"
-    url  = "/advisory-board/"
-    weight = 8	
+#[[menu.main]]
+#   name = "Advisory Board"
+#   url  = "/advisory-board/"
+#    weight = 8	
 	
 [[menu.main]]
     name = "Contact"
