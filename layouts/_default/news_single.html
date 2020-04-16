@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-<div itemscope itemtype = "https://schema.org/MedicalBusiness"> 
-{{ partial "head.html" . }}
+<div itemscope itemtype="https://schema.org/MedicalBusiness">
+    {{ partial "head.html" . }}
 
-<body>
-    <div id="all">
-        <header>
-            {{ partial "nav.html" . }}
-        </header>
-        <div itemprop = "diversityStaffingReport" itemscope itemtype = "https://schema.org/Article">
-        {{ partial "breadcrumbs.html" . }}  
+    <body>
+        <div id="all">
+            <header>
+                {{ partial "nav.html" . }}
+            </header>
+            <div itemprop="diversityStaffingReport" itemscope itemtype="https://schema.org/Article">
+                {{ partial "breadcrumbs.html" . }}
 
-        <div id="content">
-            {{ if isset .Params "id" }}
-            {{ partial .Params.id . }}
-            {{ else }}
-            <div class="container">
-                {{ partial "bread-crumb.html" . }}
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="news-banner-image">
-                            {{ if .Params.banner }}
-                            <img itemprop = "image" src="{{ .Params.banner | absURL }}" class="img-responsive" alt="{{ .Title }}" title="{{ .Title }}">
-                            {{ else }}
-                            <img itemprop = "image" src="img/placeholder.png | absURL" class="img-responsive" alt="{{ .Title }}" title="{{ .Title }}">
-                            {{ end }}
+                <div id="content">
+                    {{ if isset .Params "id" }}
+                    {{ partial .Params.id . }}
+                    {{ else }}
+                    <div class="container">
+                        {{ partial "bread-crumb.html" . }}
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="news-banner-image">
+                                    {{ if .Params.banner }}
+                                    <img itemprop="image" src="{{ .Params.banner | absURL }}" class="img-responsive"
+                                        alt="{{ .Title }}" title="{{ .Title }}">
+                                    {{ else }}
+                                    <img itemprop="image" src="img/placeholder.png | absURL" class="img-responsive"
+                                        alt="{{ .Title }}" title="{{ .Title }}">
+                                    {{ end }}
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="clearfix">
-                            <p class="date-comments"  itemprop = "datePublished">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="clearfix">
+                                    <p class="date-comments" itemprop="datePublished">
                                         Posted {{ .Date.Format .Site.Params.date_format }} via <a target="_blank"
                                             itemprop="publisher" itemscope itemtype="https://schema.org/Organization"
                                             href="{{ .Params.cleanUrl }}">
@@ -44,6 +46,11 @@
                             <div class="col-md-12">
                                 <div class="img-class" itemprop="articleBody">
                                     {{ .Content | safeHTML }}
+                                    {{ if isset .Params "pdfurl" }}   
+                                    <object data="{{ .Params.pdfURL | absURL}}" type="application/pdf" width="100%" height="500">
+                                        <embed src="{{ .Params.pdfURL | absURL}}" type="application/pdf" />
+                                    </object>
+                                     {{ end }}
                                 </div>
                             </div>
                         </div>
@@ -58,20 +65,20 @@
                             {{ .Render "li-next" }}
 
 
-                </nav>
+                        </nav>
+                        {{ end }}
+                        <!-- /.row -->
+                    </div>
+                </div>
+                <!-- /.container -->
                 {{ end }}
-                <!-- /.row -->
+
+                <!-- /#content -->
+                {{ partial "footer.html" . }}
             </div>
-            </div>
-            <!-- /.container -->
-            {{ end }}
-       
-        <!-- /#content -->
-        {{ partial "footer.html" . }}
-    </div>
-    <!-- /#all -->
-    {{ partial "scripts.html" . }}
-</body>
+            <!-- /#all -->
+            {{ partial "scripts.html" . }}
+    </body>
 </div>
 
 </html>

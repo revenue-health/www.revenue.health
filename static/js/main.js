@@ -1,9 +1,10 @@
 (function () {
     var pathname = window.location.pathname;
+    //alert(pathname);
     $(".navbar-li").removeClass("active");
     if (pathname == '/') {
         $("#nav_wght_1").addClass("active");
-    } else if (pathname == '/home-health/') {
+    } else if (pathname.includes('/home-health/')) {
         $("#nav_wght_2").addClass("active");
     } else if (pathname.includes('/pdgm/')) {
         $("#nav_wght_3").addClass("active");
@@ -15,10 +16,8 @@
         $("#nav_wght_6").addClass("active");
     } else if (pathname.includes('/executive-team/')) {
         $("#nav_wght_7").addClass("active");
-    } else if (pathname.includes('/advisory-board/')) {
-        $("#nav_wght_8").addClass("active");
     } else if (pathname.includes('/contact/')) {
-        $("#nav_wght_9").addClass("active");
+        $("#nav_wght_8").addClass("active");
     } else {
         $("#nav_wght_1").addClass("active");
     }
@@ -38,4 +37,24 @@
             $('.submit-contact-form').addClass('isDisabled');
         }
     }
+    
+
 })(); 
+
+$(document).ready(function(){
+            $("a:contains('Read on')").each( function( i, element ) {
+                $(this).attr('target','_blank');
+             
+         });
+        // Add minus icon for collapse element which is open by default
+        $(".collapse.show").each(function(){
+            $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+        });
+        
+        // Toggle plus minus icon on show hide of collapse element
+        $(".collapse").on('show.bs.collapse', function(){
+            $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+        }).on('hide.bs.collapse', function(){
+            $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+        });
+    });

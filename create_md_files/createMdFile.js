@@ -1,7 +1,9 @@
 const request = require('request');
 const CONFIGURATION = require('./configuration');
 const fs = require('fs');
-const converter = require('html-to-markdown');
+const TurndownService = require('turndown');
+const turndownService = new TurndownService();
+const path = require('path');
 getRequest = (options, json = true) => new Promise((resolve, reject) => {
     request.get(options, function (err, resp, body) {
         if (err) {
@@ -62,27 +64,39 @@ async function main() {
                                 const elements = response['_embedded']['elements'];
                                 let mdFileName = item['subject'].replace(/[^a-z\d\s]+/gi, " ");
                                 mdFileName = mdFileName.trim();
-                                let featuredImageUrl = '';
+								let featuredImageUrl = '';
+								let pdfUrl = '';
                                 let metaDataUrl = '';
                                 let ogSiteName = '';
+								let attachment_title = '';
+								let curated_attachment_basename = '';
+								let curated_attachment_extension = '';
+								let extension_img = '';
                                 elements.some(function (attachment, index, _arr) {
                                     if (attachment['_links']['self']['title']) {
-                                        if (attachment['_links']['self']['title'] === 'Curated_Featured_Image.png') {
+                                        attachment_title = attachment['_links']['self']['title'];
+										curated_attachment_extension = path.extname(attachment_title);
+										curated_attachment_basename = path.basename(attachment_title, curated_attachment_extension);							
+										if (attachment_title === 'Curated_Featured_Image.pdf') {
+                                            pdfUrl = attachment['_links']['self']['href'];
+                                            pdfUrl = CONFIGURATION.baseUrl + pdfUrl + '/content';
+                                        }else if(curated_attachment_basename == 'Curated_Featured_Image') {
                                             featuredImageUrl = attachment['_links']['self']['href'];
                                             featuredImageUrl = CONFIGURATION.baseUrl + featuredImageUrl + '/content';
-                                        } else if (attachment['_links']['self']['title'] === 'Lectio_Extension_Curation.json') {
+											extension_img = path.extname(attachment_title);
+                                        }else if (attachment_title === 'Lectio_Extension_Curation.json') {
                                             metaDataUrl = attachment['_links']['self']['href'];
                                             metaDataUrl = CONFIGURATION.baseUrl + metaDataUrl + '/content';
-                                        }
+                                        }						
                                     }
                                 });
-                                if (featuredImageUrl !== '') {
+                                if (featuredImageUrl !== '' && extension_img != '') {
                                     options.url = featuredImageUrl;
                                     options['encoding'] = 'binary';
                                     await getRequest(options, false).then(async function (responseData) {
                                         let fileName = item['subject'].replace(/[^a-z\d\s]+/gi, "");
                                         fileName = fileName.trim();
-                                        fileName = fileName + '.png';
+                                        fileName = fileName + extension_img;
                                         imagePath = "/img/resources/" + fileName;
                                         mdContent = mdContent + "banner : " + '"' + imagePath + '"' + "\n";
                                         fs.writeFile("static/img/resources/" + fileName, responseData, 'binary', function (err) {
@@ -100,6 +114,24 @@ async function main() {
                                         if (err) { throw err } else {
                                             console.log(mdFileName, 'Saved successfully!');
                                         }
+                                    });
+                                }
+                                if (pdfUrl !== '') {
+                                    options.url = pdfUrl;
+                                    options['encoding'] = 'binary';
+                                    await getRequest(options, false).then(async function (responseData) {
+                                        let pdfFileName = item['subject'].replace(/[^a-z\d\s]+/gi, "");
+                                        pdfFileName = pdfFileName.trim();
+                                        pdfFileName = pdfFileName + '.pdf';
+                                        pdfPath = "/img/resources/" + pdfFileName;
+                                        mdContent = mdContent + "pdfURL : " + '"' + pdfPath + '"' + "\n";
+                                        fs.writeFile("static/img/resources/" + pdfFileName, responseData, 'binary', function (err) {
+                                            if (err) {
+                                                console.log(err);
+                                            } else {
+                                                console.log(pdfFileName, "-pdf is saved!");
+                                            }
+                                        });
                                     });
                                 }
                                 if (metaDataUrl !== '') {
@@ -153,7 +185,7 @@ async function main() {
                                 mdContent = mdContent + "layout: " + '"' + layoutName + '"' + "\n";
                                 mdContent = mdContent + "breadcrumbs:\n - Home\n - News\n - " + mdFileName + "\n";
                                 mdContent = mdContent + "breadcrumbLinks:\n - / \n - /news\n - / \n";
-                                mdContent = mdContent + "---\n" + converter.convert(item['description']['raw'].replace(/[^\x20-\x7E]/g, '')) + "\n";
+                                mdContent = mdContent + "---\n" + turndownService.turndown(item['description']['raw'].replace(/[^\x20-\x7E]/g, '')) + "\n";
                                 fs.writeFile('content/news/' + mdFileName + '.md', mdContent, function (err) {
                                     if (err) { throw err } else {
                                         console.log(mdFileName, 'Saved successfully!');
