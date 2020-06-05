@@ -4,6 +4,7 @@ date = "2018-05-12T13:07:31+02:00"
 tags = ["approach"]
 categories = ["approach"]
 banner = "img/resources/reporting-methodology.jpg"
+ogImage = "img/resources/reporting-methodology.jpg"
 breadcrumbs = ["Home","Blog","Reporting Methodology"]
 breadcrumbLinks = ["/","/blog","/"]
 +++

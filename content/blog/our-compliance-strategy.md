@@ -4,6 +4,7 @@ date = "2018-05-11T13:07:31+02:00"
 tags = ["approach", "compliance"]
 categories = ["compliance"]
 banner = "img/resources/compliance-guide.jpg"
+ogImage = "img/resources/compliance-guide.jpg"
 breadcrumbs = ["Home","Blog","Our Compliance Strategy"]
 breadcrumbLinks = ["/","/blog","/"]
 +++

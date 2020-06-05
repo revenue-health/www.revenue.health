@@ -4,6 +4,7 @@ date = "2018-05-11T13:07:31+02:00"
 tags = ["process"]
 categories = ["approach"]
 banner = "img/resources/medical-billing-flowchart.png"
+ogImage = "img/resources/medical-billing-flowchart.png"
 breadcrumbs = ["Home","Blog","Our Process"]
 breadcrumbLinks = ["/","/blog","/"]
 +++

@@ -4,6 +4,7 @@ date = "2019-08-02T15:52:31-05:00"
 tags = ["PDGM"]
 categories = ["PDGM"]
 banner = "img/resources/pdgm.jpg"
+ogImage = "img/resources/pdgm.jpg"
 breadcrumbs = ["Home","Blog","What is PDGM, What is new, and what is The RA Approach?"]
 breadcrumbLinks = ["/","/blog","/"]
 +++

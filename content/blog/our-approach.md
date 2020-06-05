@@ -4,6 +4,7 @@ date = "2018-05-10T13:07:31+02:00"
 tags = ["approach"]
 categories = ["approach"]
 banner = "img/resources/handshake-blue-gray.jpg"
+ogImage = "img/resources/handshake-blue-gray.jpg"
 private = true
 breadcrumbs = ["Home","Blog","Our Approach"]
 breadcrumbLinks = ["/","/blog","/"]
