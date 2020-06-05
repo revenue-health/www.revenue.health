@@ -72,6 +72,7 @@ async function main() {
 								let curated_attachment_basename = '';
 								let curated_attachment_extension = '';
 								let extension_img = '';
+                                let imagePath = '';
                                 elements.some(function (attachment, index, _arr) {
                                     if (attachment['_links']['self']['title']) {
                                         attachment_title = attachment['_links']['self']['title'];
@@ -154,7 +155,8 @@ async function main() {
                                                         ogSiteName = openMeta['content'];
                                                         mdContent = mdContent + "ogSiteName: " + '"' + openMeta['content'] + '"' + "\n";
                                                     } else if (openMeta['name'] === 'og:image') {
-                                                        mdContent = mdContent + "ogImage: " + '"' + openMeta['content'] + '"' + "\n";
+                                                        //mdContent = mdContent + "ogImage: " + '"' + openMeta['content'] + '"' + "\n";
+                                                        mdContent = mdContent + "ogImage: " + '"' + imagePath + '"' + "\n";
                                                     }
                                                 }
                                             }
@@ -172,7 +174,8 @@ async function main() {
                                                     } else if (twitterMeta['name'] === 'twitter:site') {
                                                         mdContent = mdContent + "twitterSite: " + '"' + twitterMeta['content'] + '"' + "\n";
                                                     } else if (twitterMeta['name'] === 'twitter:image') {
-                                                        mdContent = mdContent + "twitterImage: " + '"' + twitterMeta['content'] + '"' + "\n";
+                                                        //mdContent = mdContent + "twitterImage: " + '"' + twitterMeta['content'] + '"' + "\n";
+                                                          mdContent = mdContent + "twitterImage: " + '"' + imagePath + '"' + "\n";
                                                     } else if (twitterMeta['name'] === 'twitter:creator') {
                                                         mdContent = mdContent + "twitterCreator: " + '"' + twitterMeta['content'] + '"' + "\n";
                                                     }

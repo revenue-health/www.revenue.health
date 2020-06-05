@@ -70,11 +70,96 @@
 
   <link rel="alternate" href="{{ "/index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
 
-  <!-- Facebook OpenGraph tags -->
+<!-- Facebook OpenGraph tags -->
+  {{ if .IsHome }}
   <meta property="og:title" content="{{ .Site.Params.metatitle }}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ .URL }}/" />
-  <!--<meta property="og:image" content="/img/carousel/revenue-cycle-management.jpg" />-->
+  {{ else if eq $currentTag "blog"}}
+  <meta property="og:title" content="{{ .Site.Params.BlogTitle }}" />
+  {{ else if eq $currentTag "news"}}
+  <meta property="og:title" content="{{ .Site.Params.NewsTitle }}" />
+  {{ else if $currentTagSecond}}
+ <meta property="og:title" content="{{ .Title}} | {{ upper  .Type}} - Revenue Acceleration LLC" />
+  {{else}}
+  <meta property="og:title" content="{{ .Site.Params.metatitle }}" />
+  {{ end }}
+
+  {{ if .IsHome }}
+  <meta property="og:description" content="{{ .Site.Params.defaultDescription }}">
+  {{ else if eq $currentTag "blog"}}
+  <meta property="og:description" content="{{ .Site.Params.BlogDescription }}">
+  {{ else if eq $currentTag "news"}}
+  <meta property="og:description" content="{{ .Site.Params.NewsDescription }}">
+  {{ else if $currentTagSecond}}
+  <meta property="og:description" content="{{ .Description | default (substr .Summary 0 160) }}">
+  {{else}}
+  <meta property="og:description" content="{{ .Description }}"> 
+  {{ end }}
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="revenue.health" />
+  {{ if .IsHome }}
+  <meta property="og:image" content="{{ .Site.Params.ogimage | absURL}}" />
+  {{ else if eq $currentTag "blog"}}
+  <meta property="og:image" content="{{ .Site.Params.ogimage | absURL}}" />
+  {{ else if eq $currentTag "news"}}
+  <meta property="og:image" content="{{ .Site.Params.ogimage | absURL}}" />
+  {{ else if $currentTagSecond}}
+  {{ if .Params.ogImage}}
+  <meta property="og:image" content="{{ .Params.ogImage | absURL}}" />
+  {{else}}
+  <meta property="og:image" content="{{ .Site.Params.ogimage | absURL}}" />
+  {{ end }}
+  {{else}}
+  <meta property="og:image" content="{{ .Site.Params.ogimage | absURL}}" />
+  {{ end }}
+
+  <!-- Twitter OpenGraph tags -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@revenue.health" />
+  {{ if .IsHome }}
+  <meta name="twitter:title" content="{{ .Site.Params.metatitle }}" />
+  {{ else if eq $currentTag "blog"}}
+  <meta name="twitter:title" content="{{ .Site.Params.BlogTitle }}" />
+  {{ else if eq $currentTag "news"}}
+  <meta name="twitter:title" content="{{ .Site.Params.NewsTitle }}" />
+  {{ else if $currentTagSecond}}
+  <meta name="twitter:title" content="{{ .Title}} | {{ upper  .Type}} - Revenue Acceleration LLC" />
+  {{else}}
+  <meta name="twitter:title" content="{{ .Site.Params.metatitle }}" />
+  {{ end }}
+
+  {{ if .IsHome }}
+  <meta name="twitter:description" content="{{ .Site.Params.defaultDescription }}">
+  {{ else if eq $currentTag "blog"}}
+  <meta name="twitter:description" content="{{ .Site.Params.BlogDescription }}">
+  {{ else if eq $currentTag "news"}}
+  <meta name="twitter:description" content="{{ .Site.Params.NewsDescription }}">
+  {{ else if $currentTagSecond}}
+  <meta name="twitter:description" content="{{ .Description | default (substr .Summary 0 160) }}">
+  {{else}}
+  <meta name="twitter:description" content="{{ .Description }}"> 
+  {{ end }}
+
+  {{ if .IsHome }}
+  <meta property="twitter:image" content="{{ .Site.Params.ogimage | absURL}}" />
+  {{ else if eq $currentTag "blog"}}
+  <meta property="twitter:image" content="{{ .Site.Params.ogimage | absURL}}" />
+  {{ else if eq $currentTag "news"}}
+  <meta property="twitter:image" content="{{ .Site.Params.ogimage | absURL}}" />
+  {{ else if $currentTagSecond}}
+  {{ if .Params.ogImage}}
+  <meta property="twitter:image" content="{{ .Params.ogImage | absURL}}" />
+  {{else}}
+  <meta property="twitter:image" content="{{ .Site.Params.ogimage | absURL}}" />
+  {{ end }}
+  {{else}}
+  <meta property="twitter:image" content="{{ .Site.Params.ogimage | absURL}}" />
+  {{ end }}
+
+  <!--<meta property="og:url" content="{{ .URL }}/" />
+  <meta property="og:image" content="/img/carousel/revenue-cycle-management.jpg" />-->
+  
+
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
     w[l] = w[l] || []; w[l].push({
