@@ -104,13 +104,15 @@
   {{ else if eq $currentTag "news"}}
   <meta property="og:image" content="{{ .Site.Params.ogimage | absURL}}" />
   {{ else if $currentTagSecond}}
-  {{ if .Params.ogImage}}
-  <meta property="og:image" content="{{ .Params.ogImage | absURL}}" />
+    {{ if .Params.ogImage}}
+    <meta property="og:image" content="{{ .Params.ogImage | absURL}}" />
+    {{ else if .Params.banner}}
+    <meta property="og:image" content="{{ .Params.banner | absURL}}" />
+    {{else}}
+      <meta property="og:image" content="{{ .Site.Params.ogimage | absURL}}" />
+    {{ end }}
   {{else}}
-  <meta property="og:image" content="{{ .Site.Params.ogimage | absURL}}" />
-  {{ end }}
-  {{else}}
-  <meta property="og:image" content="{{ .Site.Params.ogimage | absURL}}" />
+    <meta property="og:image" content="{{ .Site.Params.ogimage | absURL}}" />
   {{ end }}
 
   <!-- Twitter OpenGraph tags -->
@@ -147,13 +149,15 @@
   {{ else if eq $currentTag "news"}}
   <meta property="twitter:image" content="{{ .Site.Params.ogimage | absURL}}" />
   {{ else if $currentTagSecond}}
-  {{ if .Params.ogImage}}
-  <meta property="twitter:image" content="{{ .Params.ogImage | absURL}}" />
+    {{ if .Params.ogImage}}
+    <meta property="twitter:image" content="{{ .Params.ogImage | absURL}}" />
+    {{ else if .Params.banner}}
+    <meta property="twitter:image" content="{{ .Params.banner | absURL}}" />
+    {{else}}
+    <meta property="twitter:image" content="{{ .Site.Params.ogimage | absURL}}" />
+    {{ end }}
   {{else}}
-  <meta property="twitter:image" content="{{ .Site.Params.ogimage | absURL}}" />
-  {{ end }}
-  {{else}}
-  <meta property="twitter:image" content="{{ .Site.Params.ogimage | absURL}}" />
+   <meta property="twitter:image" content="{{ .Site.Params.ogimage | absURL}}" />
   {{ end }}
 
   <!--<meta property="og:url" content="{{ .URL }}/" />

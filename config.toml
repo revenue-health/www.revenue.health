@@ -130,7 +130,7 @@ paginate = 10
     NewsDescription ="Find  new technologies in healthcare management with Revenue Acceleration. Get updated with news on patient driven groupings model and revenue cycle management."
     BlogTitle ="Revenue Cycle Management & Compliance Blogs | Revenue Acceleration LLC "
     BlogDescription ="Revenue acceleration functions with  revenue cycle management (RCM) and  compliance strategy for enhancing revenue for a hospital."
-    ogimage ="/img/carousel/revenue-cycle-management.jpg"
+    ogimage ="/img/default-banner.jpg"
 
     # Google Maps API key (if not set will default to not passing a key.)
     googleMapsApiKey = ""
