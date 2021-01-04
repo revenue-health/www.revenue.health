@@ -97,9 +97,9 @@ _________________________________________________________ -->
           {{ end }}
         </ul>
       </div>
-            {{ if isset .Site.Params "copyright" }}
-            <p class="footer-copyright">{{ .Site.Params.copyright | safeHTML }}</p>
-            {{ end }}
+
+            <p class="footer-copyright">Copyright (C) {{ now.Format "2006"}} <a href='https://www.revenue.health/'>Revenue Acceleration LLC</a> - Healthcare Revenue Cycle Management & Administration. All Rights Reserved.</p>
+          
             <!-- <p class="pull-right">
               {{ i18n "templateBy" }} <a href="http://bootstrapious.com/free-templates">Bootstrapious</a>.
               <!-- Not removing this link is part of the licence conditions of the template. Thanks for understanding :) -->              
