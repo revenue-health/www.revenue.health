@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: https://usebasin.com/f/e9d64b37198d
-
-Sitemap: https://www.revenue.health/sitemap.xml 
