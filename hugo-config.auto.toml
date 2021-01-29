@@ -226,7 +226,7 @@ paginate = 10
       unsafe = true
 
 [[module.imports]]
-path                   = "/home/divya/workspaces/gl.infra.medigy.com/medigy-presentation-content/news/revenue-health-curations"
+path                   = "gl.infra.medigy.com/medigy-presentation-content/news/revenue-health-curations.git"
 
 
 [[module.imports.mounts]]
