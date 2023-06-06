@@ -19,45 +19,72 @@ paginate = 10
     weight = 1
 
 [[menu.main]]
+    name = "Solutions"
+    url = "/solutions/"
+    weight = 2
+
+[[menu.main]]
+    name = "Medical Billing Services pricing"
+    url  = "/medical-billing/"
+    weight = 3
+
+[[menu.main]]
+    name = "Reduce Cost"
+    url  = "/medical-cost/"
+    weight = 4
+
+[[menu.main]]
+    name = "The RA Advantage"
+    url  = "/ra-advantage/"
+    weight = 5
+
+[[menu.main]]
     name = "Home Health"
     url  = "/home-health/"
-    weight = 2
+    weight = 6
 
 [[menu.main]]
     name = "PDGM"
     url  = "/pdgm/"
-    weight = 3
+    weight = 7
 
 [[menu.main]]
-    name = "Blog"
-    url  = "/blog/"
-    weight = 4
-
-[[menu.main]]
-    name = "News"
-    url  = "/news/"
-    weight = 5
-
+    name = "Home Health Billing"
+    url  = "/home-health-billing/"
+    weight = 8
+    
 [[menu.main]]
     name = "FAQ"
     identifier = "faq"
     url  = "/faq/"
-    weight = 6
+    weight = 9
 
 [[menu.main]]
-    name = "Team"
-    url  = "/executive-team/"
-    weight = 7
+    name = "Contact"
+    url  = "/contact/"
+    weight = 10
+
+
+#[[menu.main]]
+#   name = "Blog"
+#   url  = "/blog/"
+#   weight = 4
+
+#[[menu.main]]
+#   name = "News"
+#   url  = "/news/"
+#   weight = 5
+
+#[[menu.main]]
+#  name = "Team"
+#  url  = "/executive-team/"
+#  weight = 7
 
 #[[menu.main]]
 #   name = "Advisory Board"
 #   url  = "/advisory-board/"
-#    weight = 8	
+#   weight = 8	
 	
-[[menu.main]]
-    name = "Contact"
-    url  = "/contact/"
-    weight = 9
 
 	
 [footermenu]
@@ -70,15 +97,15 @@ paginate = 10
     name = "PDGM"
     url  = "/pdgm/"
     weight = 2
-[[menu.footermenu]]
-    name = "Blog"
-    url  = "/blog/"
-    weight = 3
+#[[menu.footermenu]]
+#    name = "Blog"
+#    url  = "/blog/"
+#    weight = 3
 
-[[menu.footermenu]]
-    name = "News"
-    url  = "/news/"
-    weight = 4
+#[[menu.footermenu]]
+#    name = "News"
+#    url  = "/news/"
+#    weight = 4
 
 [[menu.footermenu]]
     name = "FAQ"
@@ -86,10 +113,10 @@ paginate = 10
     url  = "/faq/"
     weight = 5
 
-[[menu.footermenu]]
-    name = "Team"
-    url  = "/executive-team/"
-    weight = 6
+#[[menu.footermenu]]
+#    name = "Team"
+#    url  = "/executive-team/"
+#    weight = 6
 
 [[menu.footermenu]]
     name = "Contact"
